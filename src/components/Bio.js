@@ -1,32 +1,50 @@
 import React from 'react'
 import styles from './Bio.module.css'
 import { getGravatarURL } from '../utils/getGravatarURL'
+import { formatDate } from '../utils/formats'
 
-function Bio(props) {
+function Bio({readingTime,date, showMajor= false}) {
   let photoURL = getGravatarURL({
     email: "test1@example.com",
     size: 56,
   })
 
+  let readingTimeElement;
+  
+  if (typeof readingTime == 'object') {
+    let minutes = Math.max(Math.round(readingTime.minutes), 1)
+    let cups = Math.round(minutes / 5);
+    readingTimeElement =
+      <React.Fragment>
+        {' '}&bull;{' '}
+        <span >
+          {new Array(cups || 1).fill('☕️').join('')} {minutes} min read
+        </span>
+      </React.Fragment>
+  }
+
   return (
-    <div className={`
-      ${styles.Bio}
-      ${props.className || ''}
-    `}>
-      <img src={photoURL} alt="Me" />
-      <p>
-        Post by{' '}
-        <a href="https://twitter.com/james_k_nelson/">DanSt</a>.
-        {/* <br />
-        Themed after Gatsby's blog starter and Dan Abramov's{' '}
-        <a href="https://overreacted.io/">overreacted.io</a>.<br /> */}
-        {/* Based on{' '}
-        <a href="https://facebook.github.io/create-react-app/">
-          create-react-app
+    <div className="row post-top-meta">
+        <div className="author-avatar">
+        <a href="/about">
+            <img className="author-thumb" src={photoURL} alt="DanSt" width="48" height="48"/>
         </a>
-        , <a href="https://mdxjs.com/">MDX</a>, and{' '}
-        <a href="https://frontarm.com/navi/">Navi</a>. */}
-      </p>
+        </div>
+        <div className="author-info">
+        <div className="author-description">
+            <a className="link-dark" href="/about">DanSt</a>
+            <a href="/about" className="author-major">Developer</a>
+        </div>
+        {readingTime && date && (
+          <div className="flex-post-date">
+            <span className="post-date">
+            <time dateTime={date.toUTCString()}>{formatDate(date)}</time>
+            </span>
+            <span className="post-read">{readingTimeElement || null}</span>
+          </div>
+        )}
+        {showMajor && (<span className="author-major">Share my knowledge</span>)}
+        </div>
     </div>
   )
 }
