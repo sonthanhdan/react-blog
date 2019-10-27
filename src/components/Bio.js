@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './Bio.module.css'
 import { getGravatarURL } from '../utils/getGravatarURL'
 import { formatDate } from '../utils/formats'
+import './Bio.css'
 
 function Bio({readingTime,date, showMajor= false}) {
   let photoURL = getGravatarURL({

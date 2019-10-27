@@ -1,0 +1,90 @@
+.paginationstyle__PaginationWrapper {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.paginationstyle__PrevPage {
+  min-width: 32px;
+}
+.paginationstyle__PrevPage a {
+  width: 32px;
+  height: 32px;
+  color: rgb(41, 41, 41);
+  background-color: rgb(243, 243, 243);
+  font-size: 18px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.15s ease-in-out 0s;
+}
+
+.paginationstyle__PrevPage a:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(209, 0, 104);
+  text-decoration: none;
+}
+.paginationstyle__PrevPage a svg {
+  display: block;
+}
+
+.paginationstyle__NextPage {
+  min-width: 32px;
+}
+.paginationstyle__NextPage a {
+  width: 32px;
+  height: 32px;
+  color: rgb(41, 41, 41);
+  background-color: rgb(243, 243, 243);
+  font-size: 18px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.15s ease-in-out 0s;
+}
+
+.paginationstyle__NextPage a:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(209, 0, 104);
+  text-decoration: none;
+}
+
+.paginationstyle__NextPage a svg {
+  display: block;
+}
+
+
+
+
+
+.paginationstyle__PageNumber {
+  color: rgb(0, 0, 0);
+  font-family: "Fira Sans", sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+.Pagination {
+  display: block;
+  margin: 4.375rem 0 7rem;
+}
+  
+.Pagination .previous {
+  margin-right: 0.5rem;
+}
+.Pagination .next {
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,81 @@
+.TagIndexPage {
+  min-height: 40em;
+}
+@media (max-width: 990px) {
+  .TagHeading {
+    padding-left: 0px;
+    font-size: 13px;
+    margin-bottom: 80px;
+  }
+
+  .TagHeadingName {
+    font-size: 26px;
+  }
+ 
+}
+@media (max-width: 1200px) {
+  .TagHeading {
+    /* padding-left: 160px; */
+  }
+}
+
+.TagHeadingName {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(209, 0, 104);
+  margin-bottom: 8px;
+  margin-top: 0px;
+  font-family: Poppins, sans-serif;
+}
+
+.TagHeadingName::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 1px;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(41, 41, 41);
+  margin-top: 15px;
+  }
+
+.TagHeading {
+  margin-top: 1.7rem;
+  margin-bottom: 2.4rem;  
+  /* padding-left: 210px; */
+  font-size: 15px;
+  font-weight: 400;
+  /* margin-bottom: 120px; */
+  position: relative;
+}
+
+.badge {
+  position:relative;
+}
+.badge[data-badge]:after {
+  content:attr(data-badge);
+  position:absolute;
+  top: 4px;
+  right:-25px;
+  font-size:.7em;
+  /* background:  */
+  color:rgb(209, 0, 104);
+  width:18px;height:18px;
+  text-align:center;
+  line-height:18px;
+  border-radius:50%;
+  border: rgb(209, 0, 104);
+  /* box-shadow:0 0 1px rgb(101, 101, 101); */
+  border-width: 1px;
+}
+.tags .tag {
+  margin-right: 20px!important;
+  padding-right: 2em!important;
+}

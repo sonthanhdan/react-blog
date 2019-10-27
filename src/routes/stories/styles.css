@@ -1,0 +1,119 @@
+@media (max-width: 1200px) {
+    .postCardstyle__PostDate {
+        font-size: 70px;
+        margin-right: 35px;
+        padding: 25px 25px 15px;
+    }
+
+    .postCardstyle__PostTitle {
+        font-size: 26px;
+    }
+}
+@media (max-width: 990px){
+    .postCardstyle__PostCardWrapper {
+        margin-bottom: 90px;
+    }
+
+    .postCardstyle__PostDate {
+        font-size: 56px;
+        margin-right: 25px;
+        padding: 20px 20px 15px;
+    }
+
+    .postCardstyle__PostTitle {
+        font-size: 21px;
+        margin-bottom: 12px;
+    }
+
+    .postCardstyle__Excerpt {
+        font-size: 14px;
+    }
+
+    .postCardstyle__PostTags a {
+        font-size: 13px;
+        margin-right: 25px;
+    }
+}
+.postCardstyle__PostCardWrapper {
+    margin-bottom: 120px;
+}
+
+.postCardstyle__PostPreview {
+    margin-bottom: 45px;
+    position: relative;
+}
+.postCardstyle__PostPreview::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-color: rgb(117, 117, 117);
+    bottom: 0px;
+    left: 10%;
+    filter: blur(15px);
+}
+
+.postCardstyle__PostDetails {
+    display: flex;
+}
+
+.postCardstyle__PostDate {
+    font-size: 90px;
+    font-weight: 700;
+    text-align: center;
+    margin-right: 20px;
+    line-height: 1;
+    color: rgb(41, 41, 41);
+    padding: 30px 35px 15px;
+}
+
+.postCardstyle__PostDate > span {
+    font-size: 13px;
+    font-weight: 400;
+    display: block;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+
+.postCardstyle__PostContent {
+    align-self: center;
+}
+
+.postCardstyle__PostTitle {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(41, 41, 41);
+    line-height: 1.53;
+    margin-bottom: 10px;
+}
+
+.postCardstyle__PostTitle a {
+    color: rgb(41, 41, 41);
+}
+
+.postCardstyle__Excerpt {
+    font-size: 15px;
+    color: rgb(41, 41, 41);
+    font-weight: 400;
+    line-height: 2;
+    margin-bottom: 0px;
+}
+
+.postCardstyle__PostTags {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.postCardstyle__PostTags a {
+    display: block;
+    margin-right: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(209, 0, 104);
+}
+
+
+

@@ -1,4 +1,3 @@
-import importAll from 'import-all.macro'
 import * as Navi from 'navi'
 import { join } from 'path'
 import { sortBy } from 'lodash'
@@ -6,9 +5,9 @@ import slugify from 'slugify'
 import BlogPostContent from '../../components/BlogPostContent'
 // Get a list of all posts, that will not be loaded until the user
 // requests them.
-const postModules = importAll.deferred('./**/post.js')
-const importPost = pathname => postModules[pathname]()
-const postPathnames = Object.keys(postModules)
+// const postModules = importAll.deferred('./**/post.js')
+// const importPost = pathname => postModules[pathname]()
+// const postPathnames = Object.keys(postModules)
 
 const arrayPost = [
   "2019-01-05-welcome",
@@ -56,6 +55,7 @@ let posts = postDetails.map(({ slug, pathname, date }, i) => ({
       title: "Congratulations on Your New Blog!", 
       tags: ["react", "navi"], 
       content: "Learn how to add new posts and tweak the theme to your liking.",
+      description: i + "Learn how to add new posts and tweak the theme to your liking.",
       readingTime : {text: "2 min read", minutes: 2, time: 113700, words: 379},
 
     }
@@ -63,9 +63,9 @@ let posts = postDetails.map(({ slug, pathname, date }, i) => ({
     if (i !== 0) {
       let previousPostDetails = postDetails[i - 1]
       previousPost = {
-        title: "Congratulations on Your New Blog!", 
+        title: "previous Congratulations on Your New Blog!", 
         tags: ["react", "navi"], 
-        content: "Learn how to add new posts and tweak the theme to your liking.",
+        content: "previous Learn how to add new posts and tweak the theme to your liking.",
         readingTime : {text: "2 min read", minutes: 2, time: 113700, words: 379},
   
       }
@@ -75,9 +75,9 @@ let posts = postDetails.map(({ slug, pathname, date }, i) => ({
     if (i + 1 < postDetails.length) {
       let nextPostDetails = postDetails[i + 1]
       nextPost = {
-        title: "Congratulations on Your New Blog!", 
+        title: "next Congratulations on Your New Blog!", 
         tags: ["react", "navi"], 
-        content: "Learn how to add new posts and tweak the theme to your liking.",
+        content: "next Learn how to add new posts and tweak the theme to your liking.",
         readingTime : {text: "2 min read", minutes: 2, time: 113700, words: 379},
   
       }

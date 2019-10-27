@@ -59,15 +59,15 @@ const Navbar = class extends React.Component {
           >
             <div className="navbar-end has-text-centered navbar-font">
                 
-              <Link className="navbar-item" href="/blog">
+              <Link className="navbar-item" href="/">
                   Blog
               </Link>
               <Link className="navbar-item" href="/stories">
                   Chuyện của dev
               </Link>
-              <Link className="navbar-item" href="/tags/bookresource">
+              {/* <Link className="navbar-item" href="/tags/bookresource">
                 Book & Resource
-              </Link>
+              </Link> */}
               {/* <div className="navbar-item has-dropdown is-hoverable is-boxed"> */}
                 {/* <a className="navbar-link">
                   Self
@@ -84,7 +84,7 @@ const Navbar = class extends React.Component {
                 
               {/* </div> */}
               <Link className="navbar-item" href="/about">
-                About me
+                Me
               </Link>
             
             </div>

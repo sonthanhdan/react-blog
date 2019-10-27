@@ -1,11 +1,11 @@
 import React from 'react'
 import {
   View,
-  Link,
+  // Link,
   NotFoundBoundary,
   useLoadingRoute,
 } from 'react-navi'
-import siteMetadata from '../siteMetadata'
+// import siteMetadata from '../siteMetadata'
 import NotFoundPage from './NotFoundPage'
 import LoadingIndicator from './LoadingIndicator'
 import styles from './BlogLayout.module.css'

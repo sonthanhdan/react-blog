@@ -1,13 +1,14 @@
 import {
   compose,
-  lazy,
   map,
+  lazy,
   mount,
   redirect,
   resolve,
   route,
   withContext,
   withView,
+  // withHead
 } from 'navi'
 import React from 'react'
 import { join } from 'path'
@@ -15,9 +16,11 @@ import { chunk, fromPairs } from 'lodash'
 import BlogIndexPage from '../components/BlogIndexPage'
 import BlogLayout from '../components/BlogLayout'
 import BlogPostLayout from '../components/BlogPostLayout'
+import StoriesIndexPage from './stories'
 import siteMetadata from '../siteMetadata'
 import About from './about'
 import posts from './posts'
+// import SEOMetaTag from '../components/SEOMetaTag'
 
 // Split the posts into a list of chunks of the given size, and
 // then build index pages for each chunk.
@@ -79,6 +82,10 @@ const routes = compose(
       <BlogLayout blogRoot={context.blogRoot} isViewingIndex={isViewingIndex} />
     )
   }),
+  // withHead((req, context) => ({
+  //   ...context,
+  //   head: <SEOMetaTag/>
+  // })),
   mount({
     // The blog's index pages go here. The first index page is mapped to the
     // root URL, with a redirect from "/page/1". Subsequent index pages are
@@ -97,20 +104,24 @@ const routes = compose(
       )),
       mount(fromPairs(posts.map(post => ['/' + post.slug, post.getPage]))),
     ),
+    '/stories': compose(
+      withView((req, context) => (
+        <StoriesIndexPage />
+      )),
+      // mount(fromPairs(posts.map(post => ['/' + post.slug, post.getPage]))),
+    ),
+
 
     // Miscellaneous pages can be added directly to the root switch.
-    '/tags': lazy(() => import('./tags')),
-    '/about': route({
+    '/tags': lazy(()=> import('./tags')),
+    '/about': route({ 
       title: 'About Me',
-      head: <>
-        <meta name="description" content="My Great description" />
-      </>,
+      // head: <SEOMetaTag/>,
       view: (<About/>),
     }),
     // Only the statically built copy of the RSS feed is intended to be opened,
     // but the route is defined here so that the static renderer will pick it
     // up.
-    '/rss': route(),
   }),
 )
 

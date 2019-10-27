@@ -1,50 +1,65 @@
 import React from 'react'
 import { Link } from 'react-navi'
-import siteMetadata from '../siteMetadata'
-import ArticleSummary from './ArticleSummary'
-import Bio from './Bio'
+// import siteMetadata from '../siteMetadata'
+// import ArticleSummary from './ArticleSummary'
+// import Bio from './Bio'
 import Pagination from './Pagination'
-import styles from './BlogIndexPage.module.css'
+import './BlogIndexPage.css'
 import Footer from './Footer'
 import NavBar from './Navbar'
+import RecentPost from './RecentPost'
+import GoTopButton from './GoTopButton'
 import './base.styles.sass'
+
 
 function BlogIndexPage({ blogRoot, pageCount, pageNumber, postRoutes }) {
   return (
-    <div>
+    <>
       <NavBar/>
       <header>
-        <h1 className={styles.title}>
-          <Link href={blogRoot}>{siteMetadata.title}</Link>
+        <h1 className="title">
+          <Link href={blogRoot}>Latest stories</Link>
         </h1>
-        <Bio />
+        {/* <Bio 
+          className={styles.bio} 
+          // readingTime={data.readingTime}
+          // date={data.date}
+          showMajor={false}
+        /> */}
       </header>
-      <ul className={styles.articlesList}>
+      <RecentPost posts={postRoutes}/>
+      {/* <ul className={styles.articlesList}>
         {postRoutes.map(route => (
           <li key={route.url.href}>
             <ArticleSummary blogRoot={blogRoot} route={route} />
           </li>
         ))}
-      </ul>
+      </ul> */}
       {pageCount > 1 && (
         <Pagination
           blogRoot={blogRoot}
           pageCount={pageCount}
           pageNumber={pageNumber}
+          prefix="page"
         />
       )}
-      <footer className={styles.footer}>
+      <footer className="footer">
         <div>
           <a href="/rss.xml" target="_blank" style={{ float: 'right' }}>
-            RSS
+            EN
           </a>
+          {/* <a href="/rss.xml" target="_blank" style={{ float: 'right' }}>
+            RSS
+          </a> */}
           <Link href="/about">About</Link> &bull; <Link href="/tags">Tags</Link>{' '}
-          &bull;{' '}
+          {/* &bull;{' '} */}
           {/* <a href="https://github.com/frontarm/create-react-blog">Source</a> */}
         </div>
       </footer>
+      <GoTopButton
+      />
       <Footer/>
-    </div>
+    </>
   )
 }
 

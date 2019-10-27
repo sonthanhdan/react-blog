@@ -1,7 +1,7 @@
 import React from 'react'
 import { compose, crawl, mount, resolve, route, withContext, withCrawlerPatterns } from 'navi'
 import { join } from 'path'
-import { fromPairs } from 'lodash'
+import { fromPairs,chunk } from 'lodash'
 import TagIndexPage from '../components/TagIndexPage'
 import TagPage from '../components/TagPage'
 import routes from './index'
@@ -51,6 +51,7 @@ const tagRoutes = compose(
         let tagRoutes = fromPairs(tags.map(name => [name.toLowerCase(), []]))
         routes.forEach(route => {
           let data = route.data
+          console.log(data)
           if (data && data.tags) {
             data.tags.forEach(tag => {
               tag = tag.toLowerCase()
@@ -79,7 +80,7 @@ const tagRoutes = compose(
       getView: async (req, context) => {
         let lowerCaseTag = req.params.tag.toLowerCase()
         let routes = await crawlRoutes(context.blogRoot)
-
+        console.log(req)
         // Build a list of pages that include the tag from the site map
         let tagRoutes = []
         routes.forEach(route => {
@@ -88,7 +89,8 @@ const tagRoutes = compose(
             tagRoutes.push(route)
           }
         })
-
+        console.log(tagRoutes)
+        let chunks = chunk(tagRoutes, 2)
         return (
           <TagPage
             blogRoot={context.blogRoot}

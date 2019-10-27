@@ -1,5 +1,7 @@
 import React from 'react'
-import styles from './NotFoundPage.module.css'
+import Navbar from './Navbar'
+import Footer from './Footer'
+// import styles from './NotFoundPage.module.css'
 
 // Note that create-react-navi-app will always show an error screen when this
 // is rendered. This is because the underlying react-scripts package shows
@@ -8,9 +10,24 @@ import styles from './NotFoundPage.module.css'
 // you'll just need to close the error overlay with the "x" at the top right.
 function NotFoundPage() {
   return (
-    <div className={styles.NotFound}>
-      <h1>404 - Not Found</h1>
-    </div>
+    <>
+    <Navbar/>
+    <section className="hero is-fullheight is-full-fullhd ">
+      <div className="hero-body">
+          <div className="container has-text-centered">
+              <h1 className="title">
+                  404
+              </h1>
+              <h2 className="subtitle">
+                  Page not found
+              </h2>
+              <p>Sorry the page you are looking for doesn&#39;t exist. <br/><br/><strong className="sad-icon">:(</strong></p><br/>
+              <a href="/" className="button is-small is-light">Back</a>
+          </div>
+      </div>
+  </section>
+  <Footer/>
+  </>
   )
 }
 

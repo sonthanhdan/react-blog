@@ -1,19 +1,30 @@
 import React from 'react'
 import { Link } from 'react-navi'
-import styles from './TagIndexPage.module.css'
+import './TagIndexPage.css'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 function TagIndexPage(props) {
   return (
-    <div className={styles.TagIndexPage}>
-      <h1>Tags</h1>
-      <ul>
+    <>
+    <Navbar/>
+    <div className="TagIndexPage">
+      <div class="TagHeading">
+        <h1 class="TagHeadingName">Tags</h1>
+        A collection of {props.tags.length} tag
+      </div>
+      <div class="tags are-medium">
         {props.tags.map(tag =>
-          <li key={tag.href}>
-            <Link href={tag.href}>{tag.name} ({tag.count})</Link>
-          </li>  
+          <span class="tag" >
+              <Link href={tag.href} className="badge" data-badge={`(${tag.count})`}>
+              {tag.name}
+            </Link>
+          </span>
         )}
-      </ul>
+      </div>
     </div>
+    <Footer/>
+    </>
   )
 }
 

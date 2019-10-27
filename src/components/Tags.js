@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-navi'
 import { kebabCase } from 'lodash'
+import './Tags.css'
+
 function Tags({ tags }) {
   return <>
     {tags && tags.length ? (
         <div style={{ marginTop: `4rem` }}>
-            <h4>Tags</h4>
+            {/* <h4>Tags</h4> */}
             <div className="tags">
                 {tags.map(tag => (
                     <span className="tag has-text-black" key={tag + `tag`}>

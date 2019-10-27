@@ -1,0 +1,33 @@
+.tags {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tag {
+    margin-bottom: 8px !important;
+    margin-right: 8px !important;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.tag a.tag-word {
+    line-height: 22px;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 5px 10px !important;
+    border-radius: 3px;
+    font-size: 15px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.54);
+    display: block;
+    font-weight: 400;
+    font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+}
+
+.tag:not(body) {
+    color: #4a4a4a; 
+    font-size: 0.75rem;
+    height: 32px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
