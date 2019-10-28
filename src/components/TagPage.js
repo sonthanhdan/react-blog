@@ -29,7 +29,9 @@ function TagPage({ blogRoot, name, routes  }) {
                     <div className="section-content">
                       <div className="section-inner sectionLayout--insetColumn">
                         <figure name="previewImage" id="previewImage" className="previewImage">
-                        <img class="progressiveMedia-image js-progressiveMedia-image" data-src="https://cdn-images-1.medium.com/focal/800/240/42/28/1*FmvJpwDbiZVleJLGYInQMw.jpeg" src="https://cdn-images-1.medium.com/focal/800/240/42/28/1*FmvJpwDbiZVleJLGYInQMw.jpeg"/>
+                        <img class="progressiveMedia-image js-progressiveMedia-image" data-src="https://cdn-images-1.medium.com/focal/800/240/42/28/1*FmvJpwDbiZVleJLGYInQMw.jpeg" src="https://cdn-images-1.medium.com/focal/800/240/42/28/1*FmvJpwDbiZVleJLGYInQMw.jpeg"
+                        alt={route.title}
+                        />
                         </figure>
                         <h3 className="tag_list_article_item_short_content_title">{route.title}</h3>
                         <h4 className="tag_list_article_item_short_content_subtitle">This decade is basically my 20s, defined by an era of&nbsp;songs

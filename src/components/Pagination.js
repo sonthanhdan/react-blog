@@ -1,6 +1,6 @@
 import { join } from 'path'
 import React from 'react'
-import { Link } from 'react-navi'
+// import { Link } from 'react-navi'
 import './Pagination.css'
 
 function Pagination({ blogRoot, pageCount, pageNumber, prefix }) {
